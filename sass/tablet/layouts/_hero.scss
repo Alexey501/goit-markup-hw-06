@@ -1,0 +1,11 @@
+.bg-img-wrapper {
+    background-image: url(../../images/hero-bg-tablet\ img.jpg);
+
+    & .hero {
+        & .container {
+            max-width: 360px;
+            min-width: 360px;
+            height: 164px;
+        }
+    }
+}

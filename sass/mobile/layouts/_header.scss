@@ -1,0 +1,123 @@
+.page-header {
+    position: relative;
+
+    & .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+    }
+
+    & .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & .menu-icon,
+    & .close-menu-icon{
+        transition: linear;
+        transition-property: fill;
+        transition-duration: 250ms;
+    }
+
+    & .menu-icon:hover {
+        fill: $accent-color;
+    }
+
+    & .wrapper {
+        transition: linear;
+        transition-property: transform,top;
+        transition-duration: 250ms;
+
+        & .close-menu-icon,
+        & .addition-socials {
+            display: none;
+        }
+
+        & .close-menu-icon:hover {
+            fill: $accent-color;
+        }
+
+        @media screen and(max-width:767px) {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 48px 40px;
+            background-color: white;
+            z-index: 5;
+
+            top: -100%;
+            transform: translate(0, -100%);
+
+            &.open {
+                top: 0;
+                transform: translate(0, 0);
+            }
+
+            & .close-menu-icon {
+                display: block;
+                position: absolute;
+                right: 15px;
+                top: 10px;
+                z-index: 6;
+            }
+
+            & .addition-socials {
+                display: flex;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 1.222;
+                letter-spacing: 0.02em;
+
+                & .item {
+
+                    &+.item {
+                        position: relative;
+                        margin-left: 20px;
+
+                        &::after {
+                            content: "";
+                            display: flex;
+                            position: absolute;
+                            left: -10px;
+                            top: 0px;
+
+                            width: 0px;
+                            height: 22px;
+
+                            border: 1px solid rgba(33, 33, 33, 0.2);
+                        }
+                    }
+
+                    & .link {
+                        color: $accent-color;
+                    }
+                }
+            }
+
+            & .icon {
+                display: none;
+            }
+
+            & .header-nav {
+                margin-bottom: 302px;
+
+                & .list .item+.item {
+                    margin-top: 32px;
+                }
+            }
+
+            & .header-contacts {
+                display: flex;
+                flex-direction: column-reverse;
+
+                & .item:first-child {
+                    margin-top: 32px;
+                    margin-bottom: 64px;
+                }
+            }
+        }
+    }
+}

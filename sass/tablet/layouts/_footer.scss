@@ -1,0 +1,28 @@
+.page-footer {
+
+    & .wrapper-tablet {
+        display: flex;
+        justify-content: space-around;
+
+        @media screen and (max-width:1599px) {
+            margin-top: 60px;
+            margin-bottom: 60px;
+
+        }
+    }
+
+    & .form-block {
+
+        @media screen and (max-width:1599px) {
+            margin-bottom: 60px;
+
+        }
+        
+        & .input {
+            width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    }
+}
